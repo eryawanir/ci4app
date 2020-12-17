@@ -1,4 +1,5 @@
 dijalanin nya pake local host biasa, maksudnya simpen di htdocs, pake xampp, terus buka di localhost/ci4app
+
 STUDI KASUS
 1.	Halaman Pendaftaran 
 Fungsi : Menginput data pasien ke tabel pasien
