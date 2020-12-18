@@ -36,6 +36,7 @@ $routes->get('/pasien', 'Pages::pasien');
 $routes->get('/bed', 'Pages::bed');
 $routes->get('/rekammedis', 'Pages::rekammedis');
 $routes->get('/transaksi', 'Pages::transaksi');
+$routes->get('/dokter', 'Dokter');
 
 /**
  * --------------------------------------------------------------------

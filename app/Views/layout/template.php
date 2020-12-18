@@ -13,9 +13,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>AdminLTE 3 | Starter</title>
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="<?= base_url() ?>/public/template/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url() ?>/template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url() ?>/public/template/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -47,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="<?= base_url() ?>/public/template/dist/img/bakti.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="<?= base_url() ?>/template/dist/img/bakti.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Rumah Sakit Rekweb</span>
             </a>
 
@@ -56,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?= base_url() ?>/public/template/dist/img/u.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?= base_url() ?>/template/dist/img/u.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Admin</a>
@@ -93,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li> -->
                         <li class="nav-item">
-                            <a href="/ci4app" class="nav-link <?= ($page == 'pendaftaran') ? 'active' : '' ?> ">
+                            <a href="/" class="nav-link <?= ($page == 'pendaftaran') ? 'active' : '' ?> ">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <p>
                                     Pendaftaran
@@ -102,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ci4app/pasien" class="nav-link <?= ($page == 'pasien') ? 'active' : '' ?> ">
+                            <a href="/pasien" class="nav-link <?= ($page == 'pasien') ? 'active' : '' ?> ">
                                 <i class="fa fa-id-card" aria-hidden="true"></i>
                                 <p>
                                     Pasien Aktif
@@ -111,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ci4app/bed" class="nav-link <?= ($page == 'bed') ? 'active' : '' ?> ">
+                            <a href="/bed" class="nav-link <?= ($page == 'bed') ? 'active' : '' ?> ">
                                 <i class="fas fa-bed"></i>
                                 <p>
                                     Manajemen Bed
@@ -120,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ci4app/rekammedis" class="nav-link <?= ($page == 'rekammedis') ? 'active' : '' ?> ">
+                            <a href="/rekammedis" class="nav-link <?= ($page == 'rekammedis') ? 'active' : '' ?> ">
                                 <i class="fas fa-book-medical"></i>
                                 <p>
                                     Rekam Medis
@@ -129,13 +134,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ci4app/transaksi" class="nav-link <?= ($page == 'transaksi') ? 'active' : '' ?> ">
+                            <a href="/transaksi" class="nav-link <?= ($page == 'transaksi') ? 'active' : '' ?> ">
                                 <i class="fas fa-dollar-sign"></i>
                                 <p>
                                     Pembayaran
                                     <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
+                        </li>
+                        <li class="nav-item has-treeview <?= ($page == 'dokter') ? 'menu-open' : '' ?>">
+                            <a href="#" class="nav-link <?= ($page == 'dokter') ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Data Master
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/dokter" class="nav-link <?= ($page == 'dokter') ? 'active' : '' ?>">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dokter</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../tables/data.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>DataTables</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../tables/jsgrid.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>jsGrid</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -172,12 +206,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- REQUIRED SCRIPTS -->
 
+
     <!-- jQuery -->
-    <script src="<?= base_url() ?>/public/template/plugins/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/template/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?= base_url() ?>/public/template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>/template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="<?= base_url() ?>/template/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>/template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>/template/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url() ?>/template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?= base_url() ?>/public/template/dist/js/adminlte.min.js"></script>
+    <script src="<?= base_url() ?>/template/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?= base_url() ?>/template/dist/js/demo.js"></script>
+    <!-- page script -->
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+
 </body>
 
 </html>
